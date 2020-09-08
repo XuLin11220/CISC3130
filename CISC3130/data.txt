@@ -159,7 +159,7 @@
 159,10,000 Hours (with Justin Bieber),Dan + Shay,1591874,https://open.spotify.com/track/2wrJq5XKLnmhRXHIAf9xBa
 160,Pop Out (feat. Lil Tjay),Polo G,1588666,https://open.spotify.com/track/6uFn47ACjqYkc0jADwEdj1
 161,Up Up And Away,Juice WRLD,1575588,https://open.spotify.com/track/7pbg3ABlAZv2NiIdKbBBFm
-162,Truth Hurts	Lizzo,1575422,https://open.spotify.com/track/3HWzoMvoF3TQfYg4UPszDq
+162,Truth,Hurts	Lizzo,1575422,https://open.spotify.com/track/3HWzoMvoF3TQfYg4UPszDq
 163,Take You Dancing,Jason Derulo,1574006,https://open.spotify.com/track/59qrUpoplZxbIZxk6X0Bm3
 164,Suicidal (Remix) [feat. Juice WRLD],YNW Melly,1570581,https://open.spotify.com/track/4S2uhQE8L9V6p7rj7SiauJ
 165,Magic In The Hamptons (feat. Lil Yachty),Social House,1566269,https://open.spotify.com/track/2Yer0p7uB2lVBUAtANuuQp
@@ -170,7 +170,7 @@
 170,Something Special,Pop Smoke,1551082,https://open.spotify.com/track/5kkaSMcf4BFlhRRICCKZb6
 171,OUT WEST (feat. Young Thug),JACKBOYS,1550812,https://open.spotify.com/track/6gi6y1xwmVszDWkUqab1qw
 172,Money In The Grave (Drake ft. Rick Ross),Drake,1547293,https://open.spotify.com/track/5ry2OE6R2zPQFDO85XkgRb
-173,...And To Those I Love, Thanks For Sticking Around,$uicideBoy$,1540032,https://open.spotify.com/track/41LhQUkElADQ5YUbpYv2D0
+173,...And To Those I Love Thanks For Sticking Around,$uicideBoy$,1540032,https://open.spotify.com/track/41LhQUkElADQ5YUbpYv2D0
 174,Memories,Maroon 5,1537383,https://open.spotify.com/track/2b8fOow8UzyDFAE27YhOZM
 175,BLIND (feat. Young Thug),DaBaby,1511360,https://open.spotify.com/track/2T5NBwKRySiCR78vVk08vr
 176,Pussy Talk,City Girls,1510841,https://open.spotify.com/track/5EzL7hGT9g2Tvqsy158Lu9
@@ -180,7 +180,7 @@
 180,Mr. Brightside,The Killers,1485090,https://open.spotify.com/track/003vvx7Niy0yvhvHt4a68B
 181,Cover Me Up,Morgan Wallen,1482526,https://open.spotify.com/track/47yypFbq6fu3yUvFoaf2UN
 182,Goodbyes (feat. Young Thug),Post Malone,1482134,https://open.spotify.com/track/0t3ZvGKlmYmVsDzBJAXK8C
-183,F.N,Lil Tjay,,1477631,https://open.spotify.com/track/0RLLvYBopDwooCyvnTwgYu
+183,F.N,Lil Tjay,1477631,https://open.spotify.com/track/0RLLvYBopDwooCyvnTwgYu
 184,Backyard Boy,Claire Rosinkranz,1475321,https://open.spotify.com/track/0QpOqKz66ZxHNqj2PPHiFF
 185,Ransom,Lil Tecca,1472326,https://open.spotify.com/track/1lOe9qE0vR9zwWQAOk6CoO
 186,Murder On My Mind,YNW Melly,1466249,https://open.spotify.com/track/7eBqSVxrzQZtK2mmgRG6lC
