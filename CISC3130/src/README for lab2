@@ -1,0 +1,3 @@
+README file This progarm will read all informations from file and input all the information into Name class. 
+In the main class, I uses while loop and call each methods. 
+If any name repeats, the code will notices and prints out some information. At the end of code, it will tells you how many name got process.

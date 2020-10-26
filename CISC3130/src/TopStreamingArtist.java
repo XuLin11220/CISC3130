@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.Scanner;
 public class TopStreamingArtist {
 	private Artist first;
@@ -64,7 +65,8 @@ public class TopStreamingArtist {
 	//display method
 	public void displayNames() {
 		Artist list = first;
-		this.sort();//call sort method
+		this.sort();
+		//call sort method
 		// if list is empty, let the user know
 		// otherwise starts to print out the name
 		if(this.isEmpty()) {
