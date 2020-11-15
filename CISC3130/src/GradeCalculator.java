@@ -1,11 +1,13 @@
 import java.util.Scanner;
-
 public class GradeCalculator {
+	//add all the grade together
 	public static double Calculate(int SumOfL,int SumOfP,int SumOfE, int Final) {
+		//convert int to double
 		double x = SumOfL, y = SumOfP, z = SumOfE, q = Final;
 		double Finalgrade = x+y+z+q;
 		return Finalgrade;	
 	}
+	//return letter grade
 	public static char letterGrade(double grade) {
 		char letter;
 		if(grade < 60)
@@ -21,11 +23,14 @@ public class GradeCalculator {
 		return letter;
 	}
 	public static void main(String args[]) {
+		//set all the array that we need
+		//we have 7 labs, 8 problemsets, 2 midterms and Final
 		int lab[] = new int [7], ProblemSet[] = new int [8], Exam[] = new int [2], Final;
 		int SumOfL = 0, SumOfP = 0, SumOfE = 0; 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to CISC 3130 Grade Calculator!");
 		System.out.print("Enter your 7 labs grades: ");
+		//add each assignment 
 		for(int i = 0; i < lab.length; i++) {
 			lab[i] = sc.nextInt();
 			SumOfL = SumOfL + lab[i];
@@ -42,6 +47,7 @@ public class GradeCalculator {
 		}
 		System.out.print("Enter your Final exam grade: ");
 			Final = sc.nextInt();
+			//get final grade
 			double grade = Calculate(SumOfL,SumOfP,SumOfE,Final);
 		System.out.println("Your grade is "+ grade);
 		System.out.println("Your letter grade is " + letterGrade(grade));
