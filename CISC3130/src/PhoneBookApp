@@ -1,0 +1,164 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
+public class PhonebookApp {
+	   public static void main(String[] args){
+	   if(args.length!=1) {
+		   System.out.println("Usage: PhonebookApp 'phonebook-filename'");
+		   System.exit(1);
+	   }
+	   Scanner sc = new Scanner(System.in);
+	   String ans = " ";
+	   try {
+		   while(ans.equals("q") == false){
+			   Phonebook send = new Phonebook("phonebook.text");
+			   System.out.print("lookup, quit (l/q)? ");
+			   ans = sc.next();
+			   if(ans.equals("l") == true) {
+				   System.out.print("last name? ");
+				   String last = sc.next();
+				   System.out.print("first name? ");
+				   String first = sc.next();
+				   Name name = new Name(first, last);
+				   PhonebookEntry entry = Phonebook.lookup(name);
+				   if(entry == null) {
+					   System.out.println("-- Name not found\n");
+				   }
+				   else {
+					   System.out.println(PhonebookEntry.name.toString()
+                               + "'s phone numbers: "
+                               + PhonebookEntry.list.toString()
+                               + "\n");
+				   }
+			   }
+		   }
+	   }
+	   catch(IOException e){
+		   System.out.println("*** IOException ***");
+           e.getMessage();
+	   }
+	   catch(Exception ex) {
+		   System.out.println("*** Exception *** ");
+		   ex.getMessage();
+	   }
+	   sc.close();
+}
+static class Name implements Comparable<Name> {
+	private String first, last;
+	public Name(String first, String last) {
+		this.first = first;
+		this.last = last;
+	}
+	Name(Name copy){//Copy constructor
+		first = copy.first;
+		last = copy.last;
+	}
+	public boolean equals(Object obj) {
+		Name name =(Name)obj;
+		if(name.first.equals(this.first)&&name.last.equals(this.last))
+			return true;
+		return false;
+	}
+	public int compareTo(Name name) {
+		int com = this.last.compareTo(name.last);
+		if(com!=0)
+			return com;
+		else
+			return this.first.compareTo(name.first);
+	}
+	public String toString() {return first + " " + last;}
+	public static Name read(Scanner sc) {
+		if(!sc.hasNext())
+			return null;
+		String last = sc.next();
+		String first = sc.next();
+		return new Name(first,last);
+	}
+}
+static class PhoneNumber{
+	private String number;
+	public PhoneNumber(String number) { this.number = number;}
+	PhoneNumber(PhoneNumber copy){ number = copy.number;}//Copy constructor
+	public boolean equals(Object obj) {
+		PhoneNumber phoneNumber = (PhoneNumber)obj;
+		return phoneNumber.number == number;
+	}
+	public String toString() { return number;}
+	public static PhoneNumber read(Scanner sc) {
+		if(!sc.hasNext())
+			return null;
+		String num = sc.next();
+		return new PhoneNumber(num);
+	}
+}
+static class ExtendedPhoneNumber extends PhoneNumber{
+	private String des;
+	public ExtendedPhoneNumber(String des,String number) {
+		super(number);
+		this.des = des;
+	}
+	ExtendedPhoneNumber(ExtendedPhoneNumber copy){super(copy); this.des = copy.des;}//Copy constructor
+	public String toString() { return des + ": " + super.toString();}
+	public static ExtendedPhoneNumber read(Scanner sc) {
+		if(!sc.hasNext())
+			return null;
+		String des = sc.next();
+		String number = sc.next();
+		return new ExtendedPhoneNumber(des,number);
+	}
+}
+static class PhonebookEntry{
+	static Name name;
+	static ArrayList<ExtendedPhoneNumber> list = new ArrayList<ExtendedPhoneNumber>();
+	public PhonebookEntry(Name name, ArrayList<ExtendedPhoneNumber> list) {
+		this.name = name;
+		this.list = list;
+	}
+	PhonebookEntry(PhonebookEntry copy){ copy.name = name; copy.list = list;}//Copy constructor
+	public Name getName() { return name;}
+	public ArrayList<ExtendedPhoneNumber> getPhoneNumbers() { return list;}
+	public String toString() { return name.toString()+ " "+ list.toString();}
+	public static PhonebookEntry read(Scanner sc) {
+		ArrayList<ExtendedPhoneNumber> list = new ArrayList<>();
+		if(!sc.hasNext())
+			return null;
+		Name name = Name.read(sc);
+		int count = sc.nextInt();
+		while(count!=0) {
+			ExtendedPhoneNumber phoneNumber = ExtendedPhoneNumber.read(sc);
+	        list.add(phoneNumber);
+	        count--;
+		}
+		return new PhonebookEntry(name,list);
+	}
+}
+static class Phonebook{
+	private static Map<Name, PhonebookEntry> map;
+	   Phonebook(String file)throws FileNotFoundException
+	   {
+		   map = new TreeMap<Name, PhonebookEntry>();
+	       Scanner scanner = new Scanner(new File(file));
+	       PhonebookEntry bookEntry;
+	       bookEntry = PhonebookEntry.read(scanner);
+	       while(bookEntry != null)
+	       {
+	    	   map.put(bookEntry.name, bookEntry);
+	           bookEntry = PhonebookEntry.read(scanner);
+	       }
+	       scanner.close();
+}
+	public static PhonebookEntry lookup(Name name) {
+	       PhonebookEntry phoneBookEntry = map.get(name);
+	       if(phoneBookEntry != null)
+	       {
+	           PhonebookEntry temp = phoneBookEntry;
+	           return temp;
+	       }
+	       return null;
+	}
+	}
+}
